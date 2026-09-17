@@ -1,3 +1,5 @@
+![Run Tests](https://github.com/n-zablovsky/yandex_disk_api_tests/actions/workflows/maven.yml/badge.svg)
+
 # Yandex Disk API Tests
 
 Автотесты для REST API Яндекс.Диска.
@@ -7,6 +9,7 @@
 - JUnit 5
 - RestAssured
 - Maven
+- GitHub Actions (CI)
 
 ## Требования
 - Java 17+
