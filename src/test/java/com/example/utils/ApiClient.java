@@ -1,5 +1,6 @@
 package com.example.utils;
 
+import io.qameta.allure.restassured.AllureRestAssured;
 import io.restassured.RestAssured;
 import io.restassured.response.Response;
 import io.restassured.specification.RequestSpecification;
@@ -18,6 +19,7 @@ public class ApiClient {
 
     private RequestSpecification request() {
         return given()
+                .filter(new AllureRestAssured())
                 .header("Authorization", "OAuth " + token)
                 .contentType("application/json");
     }
