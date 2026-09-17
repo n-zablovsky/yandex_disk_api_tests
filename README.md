@@ -9,6 +9,7 @@
 - JUnit 5
 - RestAssured
 - Maven
+- Allure
 - GitHub Actions (CI)
 
 ## Требования
@@ -24,3 +25,34 @@
 ## Запуск
 ```bash
 mvn clean test
+```
+
+## Allure-отчёт
+```bash
+mvn allure:serve
+```
+
+## Покрытие
+- **GET**: информация о диске, метаданные, содержимое корзины, публичные ресурсы
+- **PUT**: создание папки, публикация, восстановление из корзины
+- **POST**: загрузка файла, копирование
+- **DELETE**: удаление файла/папки, очистка корзины
+
+## Структура тестов
+- `DiskInfoTest` — информация о диске
+- `FolderTest` — операции с папками
+- `FileTest` — операции с файлами
+- `TrashTest` — работа с корзиной
+- `NegativeTest` — негативные сценарии
+- `PublicResourceTest` — публичные ресурсы
+- `ParameterizedPathTest` — параметризованные тесты
+
+## CI
+Проект использует GitHub Actions для автоматического запуска тестов при каждом пуше в `main`.
+
+Токен хранится в секретах репозитория (`YANDEX_DISK_TOKEN`).
+
+## Allure Report
+
+![Allure Report](https://github.com/n-zablovsky/yandex_disk_api_tests/raw/main/screenshots/allure-report.png)
+```
